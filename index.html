@@ -59,13 +59,29 @@ tailwind.config = {
 
   html { scroll-behavior: smooth; }
 
+  img{
+  max-width:100%;
+  height:auto;
+}
+
+button,
+a{
+  -webkit-tap-highlight-color: transparent;
+}
+
   body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--navy);
-    overflow-x: hidden;
-    cursor: none;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--navy);
+  overflow-x: hidden;
+  cursor: auto;
+}
+
+@media (min-width: 769px){
+  body{
+    cursor:none;
   }
+}
 
   /* Custom Cursor */
   .cursor-dot {
@@ -602,6 +618,211 @@ tailwind.config = {
   .swiper-button-next::after, .swiper-button-prev::after { font-size: 14px !important; font-weight: 700 !important; }
   .swiper-pagination-bullet { background: rgba(255,255,255,0.4) !important; }
   .swiper-pagination-bullet-active { background: var(--gold) !important; }
+
+  /* =========================================
+   MOBILE RESPONSIVE FIXES
+========================================= */
+
+@media (max-width: 1024px){
+
+  /* Hero Main Layout */
+  #hero .hero-content > div{
+    grid-template-columns:1fr !important;
+    gap:2rem !important;
+    min-height:auto !important;
+    padding:2rem 0;
+  }
+
+  #hero-left{
+    text-align:center;
+  }
+
+  #hero .hero-subtitle{
+    max-width:100%;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  #hero-stats{
+    grid-template-columns:1fr 1fr 1fr !important;
+  }
+
+  #hero-right{
+    max-width:650px;
+    margin:0 auto;
+  }
+
+  /* Floating Cards */
+  #hero-float-1{
+    left:10px !important;
+    bottom:10px !important;
+    transform:scale(.9);
+  }
+
+  #hero-float-2{
+    right:10px !important;
+    top:10px !important;
+    transform:scale(.9);
+  }
+
+  /* Levels Section */
+  .level-content{
+    grid-template-columns:1fr !important;
+    gap:2rem !important;
+  }
+
+}
+
+
+/* MOBILE PHONES */
+@media (max-width: 768px){
+
+  /* Global */
+  section{
+    overflow:hidden;
+  }
+
+  #navbar{
+    padding:0 1rem;
+  }
+
+  .nav-inner{
+    height:64px;
+  }
+
+  .hero-content{
+    padding:90px 1rem 2rem !important;
+  }
+
+  .hero-title{
+    font-size:2rem !important;
+    line-height:1.15;
+  }
+
+  .hero-subtitle{
+    font-size:.95rem;
+    line-height:1.6;
+  }
+
+  .hero-badge{
+    font-size:.7rem;
+    padding:.35rem .8rem;
+  }
+
+  /* Buttons */
+  .btn-primary,
+  .btn-outline{
+    width:100%;
+    justify-content:center;
+    padding:1rem;
+  }
+
+  /* Hero buttons container */
+  #hero-left > div[style*="display:flex"]{
+    flex-direction:column;
+    gap:.8rem !important;
+    margin-bottom:2rem !important;
+  }
+
+  /* Hero stats */
+  #hero-stats{
+    grid-template-columns:1fr !important;
+    gap:.8rem !important;
+  }
+
+  .hero-stat-num{
+    font-size:1.6rem;
+  }
+
+  /* Floating cards hide on mobile */
+  #hero-float-1,
+  #hero-float-2{
+    display:none !important;
+  }
+
+  /* Sections */
+  .section-title{
+    font-size:1.8rem !important;
+  }
+
+  .section-sub{
+    font-size:.95rem;
+  }
+
+  /* Padding Fixes */
+  .py-24{
+    padding-top:4rem !important;
+    padding-bottom:4rem !important;
+  }
+
+  .px-6{
+    padding-left:1rem !important;
+    padding-right:1rem !important;
+  }
+
+  /* Subject section top row */
+  #subjects div[style*="justify-content:space-between"]{
+    flex-direction:column;
+    align-items:flex-start !important;
+  }
+
+  /* Pricing cards if any */
+  .pricing-card{
+    padding:2rem 1.2rem;
+  }
+
+  /* Testimonial */
+  .testimonial-card{
+    padding:1.5rem;
+  }
+
+  /* Footer */
+  #footer .grid{
+    grid-template-columns:1fr !important;
+  }
+
+}
+
+
+/* SMALL PHONES */
+@media (max-width: 480px){
+
+  .hero-title{
+    font-size:1.75rem !important;
+  }
+
+  .section-title{
+    font-size:1.55rem !important;
+  }
+
+  .hero-badge{
+    width:100%;
+    justify-content:center;
+  }
+
+  #mobile-nav a{
+    font-size:1.5rem;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev{
+    width:38px !important;
+    height:38px !important;
+  }
+
+}
+
+/* Touch devices cursor fix */
+@media (max-width:768px){
+  .btn-primary,
+  .btn-outline,
+  .level-tab,
+  .form-input,
+  .subject-card{
+    cursor:auto !important;
+  }
+}
+
 </style>
 </head>
 <body>
