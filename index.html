@@ -1835,83 +1835,26 @@
             text-align: center;
         }
 
-        .plan-badge {
-            display: block;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: var(--navy);
-            background: rgba(11, 29, 58, 0.05);
-            padding: 0.25rem 0.6rem;
-            border-radius: 40px;
-            margin-bottom: 8px;
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-        }
+       
 
-        .plan-badge.popular {
-            background: var(--gold);
-            color: var(--navy);
-            box-shadow: 0 4px 12px rgba(201, 168, 76, 0.3);
-        }
-
-        /* ===== CLOCK ICON + 45 min alignment ===== */
-        .plan-price {
-            display: block;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--navy);
-            line-height: 1;
-        }
-
-        /* Inner wrapper keeps icon & text on one baseline */
-        .plan-price-inner {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            line-height: 1;
-        }
-
-        .clock-icon {
-            width: 1.1em;
-            /* scales with the font size */
-            height: 1.1em;
-            stroke: var(--gold);
-            flex-shrink: 0;
-            /* subtle continuous spin animation */
-            animation: clockTick 8s linear infinite;
-            transform-origin: center;
-        }
-
-        @keyframes clockTick {
-            0% {
-                transform: rotate(0deg);
+        /* ===== CLEAN PRICING HEADER ===== */
+        
+        .pricing-header-clean{
+                font-size: 0.82rem;
+                font-weight: 600;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color:var(--slate);
             }
-            95% {
-                transform: rotate(0deg);
-            }
-            97% {
-                transform: rotate(6deg);
-            }
-            99% {
-                transform: rotate(-3deg);
-            }
-            100% {
-                transform: rotate(0deg);
-            }
-        }
 
-        .per-hour {
-            font-size: 0.7rem;
-            font-weight: 400;
-            color: var(--slate);
-            margin-left: 1px;
-        }
+        .pricing-table td:last-child{
+                font-family:'Playfair Display', serif;
+                font-size:1.4rem;
+                font-weight:600;
+                letter-spacing:-0.01em;
+                color:var(--navy);
+            }
 
-        /* Row hover animation */
         .pricing-table tbody tr.table-row-animate {
             transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1);
             position: relative;
@@ -2467,16 +2410,9 @@
                             <tr>
                                 <th>Subject</th>
                                 <th>
-                                    <span class="plan-badge">Price</span>
-                                    <span class="plan-price">
-                                        <span class="plan-price-inner">
-                                            <svg class="clock-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                                <circle cx="12" cy="12" r="10"/>
-                                                <polyline points="12 6 12 12 16 14"/>
-                                            </svg>
-                                            45<span class="per-hour"> min.</span>
-                                        </span>
-                                    </span>
+                                    <div class="pricing-header-clean">
+                                        45 Min Session
+                                    </div>
                                 </th>
                             </tr>
                         </thead>
